@@ -1,5 +1,5 @@
-{% set version = "1.0.10" %}
-{% set sha256 = "7f1c687c7831499bcacae5e8675945a39bacbad16ecaa945e9454a32df653c01" %}
+{% set version = "1.0.14" %}
+{% set sha256 = "76ae204a7027652ac3981b9fa5817c083ba23114340284c58e756b259cd2259a" %}
 
 package:
   name: fribidi
@@ -20,13 +20,12 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - meson
     - ninja
 
 test:
   commands:
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
     - fribidi -h
 
 about:
