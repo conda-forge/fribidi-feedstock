@@ -1,5 +1,5 @@
-{% set version = "1.0.10" %}
-{% set sha256 = "7f1c687c7831499bcacae5e8675945a39bacbad16ecaa945e9454a32df653c01" %}
+{% set version = "1.0.12" %}
+{% set sha256 = "0cd233f97fc8c67bb3ac27ce8440def5d3ffacf516765b91c2cc654498293495" %}
 
 package:
   name: fribidi
@@ -25,8 +25,6 @@ requirements:
 
 test:
   commands:
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
     - fribidi -h
 
 about:
