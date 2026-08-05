@@ -1,3 +1,5 @@
+# Get an updated config.sub and config.guess
+cp $BUILD_PREFIX/share/gnuconfig/config.* .
 meson builddir -Ddocs=false ${MESON_ARGS} --prefix=$PREFIX -Ddefault_library=shared
 cd builddir
 ninja
