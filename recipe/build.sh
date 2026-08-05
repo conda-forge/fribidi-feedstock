@@ -1,3 +1,6 @@
+#!/bin/bash
+set -ex
+
 meson builddir -Ddocs=false ${MESON_ARGS} --prefix=$PREFIX -Ddefault_library=shared
 cd builddir
 ninja
