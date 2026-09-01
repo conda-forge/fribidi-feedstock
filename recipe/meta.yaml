@@ -21,8 +21,11 @@ requirements:
     - ninja
 
 test:
+  requires:
+    - {{ compiler('c') }}  # [win and arm64]
   commands:
     - fribidi -h
+    - dumpbin /headers "%LIBRARY_BIN%\\fribidi-0.dll" | findstr /I /C:"AA64 machine (ARM64)"  # [target_platform == "win-arm64"]
 
 about:
   home: https://github.com/fribidi/fribidi
